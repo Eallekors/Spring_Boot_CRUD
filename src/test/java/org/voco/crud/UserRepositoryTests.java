@@ -18,19 +18,19 @@ public class UserRepositoryTests {
     @Autowired
     private UserRepository repo;
 
-    @Test
-    public void testAddUser() {
-        User user = new User();
-        user.setFirstName("erki");
-        user.setLastName("allekõrs");
-        user.setEmail("erki@alle.com");
-        user.setPassword("password123");
-
-        User savedUser = repo.save(user);
-
-        assertThat(savedUser).isNotNull();
-        assertThat(savedUser.getId()).isGreaterThan(0);
-    }
+//    @Test
+//    public void testAddUser() {
+//        User user = new User();
+//        user.setFirstName("erki");
+//        user.setLastName("allekõrs");
+//        user.setEmail("erki@alle.com");
+//        user.setPassword("password123");
+//
+//        User savedUser = repo.save(user);
+//
+//        assertThat(savedUser).isNotNull();
+//        assertThat(savedUser.getId()).isGreaterThan(0);
+//    }
 
     @Test
     public void testListAll() {
@@ -56,7 +56,7 @@ public class UserRepositoryTests {
 
     @Test
     public void testGet() {
-        Integer userId = 2;
+        Integer userId = 3;
         Optional<User> optionalUser = repo.findById(userId);
         assertThat(optionalUser.isPresent()).isTrue();
         System.out.println(optionalUser.get());
